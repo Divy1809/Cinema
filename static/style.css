@@ -1,0 +1,282 @@
+/* Basic reset for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f7f8fa;
+    color: #333;
+    padding: 20px;
+}
+
+/* Navbar Styling */
+nav.navbar {
+    background-color: #333;
+    padding: 11px 0;
+}
+
+nav.navbar .navbar-brand {
+    color: rgb(6, 3, 10);
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+nav.navbar .navbar-brand:hover {
+    color: #f39c12;
+}
+
+/* Container for the dashboard */
+.container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 10px auto;
+    padding: 10px;
+    background-color: #f4f7fc;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading Styles */
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2c3e50;
+    font-size: 2rem;
+}
+
+/* Movie Recommendations */
+.movie-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-evenly;
+    margin-top: 10px;
+}
+
+.movie-card {
+    background: #f1eeee;
+    padding: 10px;
+    border-radius: 8px;
+    width: 200 px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.movie-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.movie-card h4 {
+    margin-bottom: 10px;
+    color: #2980b9;
+    font-size: 18px;
+    font-family: 'Cinzel', serif;
+}
+
+.movie-card p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: #7f8c8d;
+    margin: 5px 0;
+}
+
+.movie-card button {
+    background: #3498db;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.movie-card button:hover {
+    background-color: #2980b9;
+}
+
+/* Form Elements for Rating */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-size: 14px;
+    color: #555;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="number"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%;
+    transition: border-color 0.3s ease;
+}
+
+input[type="number"]:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+}
+
+/* Error and Success Messages */
+.error-message, .success-message {
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.error-message {
+    background-color: #f2d7d5;
+    color: #e74c3c;
+}
+
+.success-message {
+    background-color: #d4edda;
+    color: #28a745;
+}
+
+/* Logout Link Styling */
+a {
+    color: #3498db;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Styling for Logout */
+.logout-link {
+    margin-top: 30px;
+    display: block;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* Movie Ratings */
+.movie-card p {
+    font-size: 14px;
+    color: #555;
+}
+
+.movie-card .rating {
+    margin-top: 10px;
+}
+
+.movie-card .rating span {
+    margin-right: 5px;
+    font-size: 16px;
+}
+
+.movie-card .rating .star {
+    color: #f39c12;
+}
+
+/* Change the color of links in the navbar */
+.navbar-nav .nav-link {
+    color: #0c0801; /* Change to your desired color */
+}
+
+/* Change the color when the links are hovered */
+.navbar-nav .nav-link:hover {
+    color: #2980b9; /* Color when hovered */
+}
+
+/* You can also target specific links by their text if needed */
+.navbar-nav .nav-item.dashboard-link a {
+    color: #2ecc71; /* Example color for the Dashboard link */
+}
+
+.navbar-nav .nav-item.logout-link a {
+    color: #e74c3c; /* Example color for the Logout link */
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    color: #2c3e50;
+}
+
+
+.trailer-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 14px;
+    background-color: #e74c3c;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.3s ease;
+}
+
+.trailer-btn:hover {
+    background-color: #c0392b;
+}
+
+.logout-link {
+    display: inline-block;
+    margin-top: 20px;
+    background: #34495e;
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.logout-link:hover {
+    background-color: #2c3e50;
+}
+
+.profile-container {
+    background: #a8a8d2;
+    color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    margin: 20px;
+}
+
+.profile-card, .subscription-card {
+    background: #e168a1;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+}
+
+.thumbnail img {
+    width: 200px; /* Decreased the size of the thumbnail */
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 0 auto; /* Center the image */
+    display: block; /* Ensure it's displayed as a block element */
+}
+
+
+
+@media (max-width: 768px) {
+    .movie-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+}

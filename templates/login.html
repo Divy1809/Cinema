@@ -1,0 +1,164 @@
+{% extends "base.html" %}
+{% block title %}Login{% endblock %}
+{% block content %}
+<style>
+    body {
+        background: #000;
+        font-family: 'Poppins', sans-serif;
+        color: #fff;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        overflow: hidden;
+    }
+    body::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: 
+            radial-gradient(circle, rgba(0,255,255,0.12) 10%, transparent 10%) 0 0,
+            radial-gradient(circle, rgba(0,255,255,0.12) 10%, transparent 10%) 50px 50px;
+        background-size: 100px 100px;
+        z-index: -1;
+    }
+    .cinema-center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 85vw;
+        margin-top: 40px;
+        margin-bottom: 0;
+    }
+    .cinema-center .brand {
+        color: #00f6ff;
+        font-size: 5rem;
+        font-weight: bold;
+        letter-spacing: 6px;
+        text-shadow:
+            0 0 40px #00f6ff,
+            0 0 16px #00f6ff,
+            0 0 8px #fff;
+        text-decoration: none;
+        transition: text-shadow 0.3s;
+        padding: 0 32px; /* No bottom padding */
+        display: block;
+        line-height: 1;
+        margin: 0 auto;
+    }
+    .cinema-center .brand:hover {
+        text-shadow:
+            0 0 60px #00f6ff,
+            0 0 24px #00f6ff,
+            0 0 12px #fff;
+    }
+    .login-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 80vh;
+    }
+    .login-card {
+        background: rgba(0, 30, 60, 0.85);
+        border: 1.5px solid #00f6ff;
+        border-radius: 18px;
+        padding: 2.5rem 2rem 2rem 2rem;
+        box-shadow: 0 8px 40px rgba(0,255,255,0.18);
+        width: 100%;
+        max-width: 400px;
+        text-align: center;
+        margin-top: 0;
+        animation: fadeIn 1s ease-in-out;
+    }
+    .login-card h2 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        color: #00f6ff;
+        text-shadow: 0 0 8px #00f6ff;
+    }
+    .form-label {
+        font-weight: 600;
+        color: #00e0ff;
+        text-align: left;
+        display: block;
+        margin-bottom: 0.5rem;
+        text-shadow: 0 0 4px #00f6ff;
+    }
+    .form-control {
+        width: 100%;
+        padding: 0.75rem;
+        margin-bottom: 1rem;
+        border: 1px solid #00f6ff;
+        border-radius: 6px;
+        background: #02131a;
+        color: #fff;
+        font-size: 1rem;
+        box-shadow: 0 0 8px #00f6ff22;
+    }
+    .form-control::placeholder {
+        color: #00e0ff;
+        opacity: 0.7;
+    }
+    .btn-primary {
+        background: linear-gradient(90deg, #00f6ff 0%, #00bfff 100%);
+        border: none;
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+        border-radius: 25px;
+        color: #000;
+        font-weight: bold;
+        cursor: pointer;
+        box-shadow: 0 0 16px #00f6ff66;
+        transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+    }
+    .btn-primary:hover {
+        background: linear-gradient(90deg, #00bfff 0%, #00f6ff 100%);
+        color: #fff;
+        box-shadow: 0 0 32px #00f6ffcc;
+    }
+    .register-link {
+        display: block;
+        margin-top: 1rem;
+        color: #00f6ff;
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.3s;
+        text-shadow: 0 0 6px #00f6ff;
+    }
+    .register-link:hover {
+        color: #fff;
+        text-shadow: 0 0 12px #00f6ff;
+    }
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: scale(0.9);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+</style>
+<div class="cinema-center">
+    <a href="/" class="brand">Cińemà</a>
+</div>
+<div class="login-container">
+    <div class="login-card">
+        <h2>Welcome Back</h2>
+        {% if error %}
+        <div class="alert alert-danger">{{ error }}</div>
+        {% endif %}
+        <form action="/login" method="POST">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" id="username" name="username" class="form-control" placeholder="Enter your username" required>
+            <label for="password" class="form-label">Password</label>
+            <input type="password" id="password" name="password" class="form-control" placeholder="Enter your password" required>
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+        <a href="{{ url_for('register') }}" class="register-link">Don't have an account? Register</a>
+    </div>
+</div>
+{% endblock %}
